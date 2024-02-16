@@ -84,6 +84,8 @@ function Calculate() {
 	for(let i = 0; i < output.length; i++) {
 		if(/[\x\/\+\-]/gi.test(output[i]) && /[\-]/gi.test(output[i + 1]) && /[\d]/gi.test(output[i + 2])) {
 			output[i + 1] = "m";
+		} else if(i == 0 && output[i] == "-") {
+			output[i] = "m";
 		}
 	}
 	output = output.join("");
